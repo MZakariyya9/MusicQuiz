@@ -508,7 +508,8 @@ class Game(tk.Frame):
                 endbracket = True                           # Remember to put end bracket
             else:
                 word = word.strip(string.punctuation)       # In other cases, remove special characters
-                letter = word[0]                            # First letter stays the same
+                try:letter = word[0]                        # First letter stays the same
+                except:pass                                 # Incase there is no second letter
             letters.append(letter)
         letters = split(letters,2)                          # Function splits into 2D list
         wordentries = []                                    # Stores users entry as tkinter object - fetched via StringVar
